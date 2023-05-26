@@ -102,6 +102,7 @@ flutter:
     - assets/images/50.jpg
     - assets/images/51.jpg
     - assets/images/15.jpg
+    - assets/images/kusataniwahanak.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

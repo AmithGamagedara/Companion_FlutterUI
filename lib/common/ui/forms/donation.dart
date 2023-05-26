@@ -7,6 +7,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:file_picker/file_picker.dart';
 
+import 'donationUpView.dart';
+
 class CreatePostPage extends StatefulWidget {
   final String companion;
 
@@ -22,6 +24,7 @@ class _CreatePostPageState extends State<CreatePostPage> {
   final List<String> _videos = [];
   String? _location;
   bool _raiseFunds = false;
+  var up = '20';
 
   void _selectPhotos() async {
     final picker = ImagePicker();
@@ -30,8 +33,29 @@ class _CreatePostPageState extends State<CreatePostPage> {
       setState(() {
         _photos.add(pickedFile.path);
       });
+      if(up=='20'){
+        // Within the `FirstRoute` widget
+         {
+          print("doneeeeeeeee");
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const CreateUpdate(companion: 'companion',)),
+          );
+        };
+      }
+
+
+      void afterUpload() {
+        if (pickedFile != null) {
+          Container(
+            child: Image.asset(
+              'assets/images/kusataniwahanak.jpeg', height: 100,),
+          );
+        }
+      }
     }
   }
+
 
   void _selectVideos() async {
     final result = await FilePicker.platform.pickFiles(type: FileType.video);
@@ -131,7 +155,9 @@ class _CreatePostPageState extends State<CreatePostPage> {
                                 color: const Color.fromRGBO(88, 101, 242, 1.0),
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
-                                fontFamily: GoogleFonts.raleway().fontFamily,
+                                fontFamily: GoogleFonts
+                                    .raleway()
+                                    .fontFamily,
                               ),
                             ),
                           ),
@@ -166,13 +192,19 @@ class _CreatePostPageState extends State<CreatePostPage> {
                           decoration: InputDecoration(
                             hintText: 'Want to start a charity?',
                             hintStyle: TextStyle(
-                                fontFamily: GoogleFonts.raleway().fontFamily),
+                                fontFamily: GoogleFonts
+                                    .raleway()
+                                    .fontFamily),
                             border: InputBorder.none,
                           ),
                         ),
                       ),
+
                     ],
                   ),
+
+                  //this the place
+
                   const SizedBox(height: 16),
                   Column(
                     children: [
@@ -251,7 +283,9 @@ class _CreatePostPageState extends State<CreatePostPage> {
                       Text(
                         'Raise Funds',
                         style: TextStyle(
-                          fontFamily: GoogleFonts.raleway().fontFamily,
+                          fontFamily: GoogleFonts
+                              .raleway()
+                              .fontFamily,
                           fontWeight: FontWeight.w800,
                           color: const Color.fromRGBO(88, 101, 242, 1.0),
                         ),
@@ -282,20 +316,22 @@ class _CreatePostPageState extends State<CreatePostPage> {
         child: Text(
           _raiseFunds ? 'Next' : 'Post',
           style: TextStyle(
-            fontFamily: GoogleFonts.raleway().fontFamily,
+            fontFamily: GoogleFonts
+                .raleway()
+                .fontFamily,
             fontWeight: FontWeight.w800,
           ),
         ),
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-              (Set<MaterialState> states) {
-            if (states.contains(MaterialState.pressed)) {
-              return Colors.blue.shade200;
-            } else if (states.contains(MaterialState.disabled)) {
-              return Colors.grey;
-            }
-            return const Color.fromRGBO(88, 101, 242, 1.0);
-          }),
+                  (Set<MaterialState> states) {
+                if (states.contains(MaterialState.pressed)) {
+                  return Colors.blue.shade200;
+                } else if (states.contains(MaterialState.disabled)) {
+                  return Colors.grey;
+                }
+                return const Color.fromRGBO(88, 101, 242, 1.0);
+              }),
         ),
       ),
     );
