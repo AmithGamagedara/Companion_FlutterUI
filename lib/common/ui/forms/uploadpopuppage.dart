@@ -63,11 +63,13 @@ class _UploadPopupPageState extends State<UploadPopupPage> {
                     ),
                     const SizedBox(height: 30.0),
                     const Center(
-                      child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur, adipiscing elit, sed do eiusmod",
-                          style: TextStyle(
-                              color: Color.fromRGBO(87, 100, 241, 1.0),
-                              fontSize: 14.0)),
+                      child: Center(
+                        child: Text(
+                            "Administration will go through the legal documents and acknowledge about the process.",
+                            style: TextStyle(
+                                color: Color.fromRGBO(87, 100, 241, 1.0),
+                                fontSize: 14.0)),
+                      ),
                     ),
                     const SizedBox(height: 60.0),
                     const Text("Donation Legal",
@@ -97,7 +99,7 @@ class _UploadPopupPageState extends State<UploadPopupPage> {
                           child: Material(
                             borderRadius: BorderRadius.circular(11),
                             color: Colors.blue,
-                            elevation: 5.0,
+                            //elevation: 5.0,
                             child: const Center(
                               child: Text(
                                 "Back To Home",
