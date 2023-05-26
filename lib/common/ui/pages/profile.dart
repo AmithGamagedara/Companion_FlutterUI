@@ -14,6 +14,7 @@ import '../../routes/routes.dart';
 import '../widgets/profile_posts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/navigation_widget.dart';
+import '../widgets/profile_posts4.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -259,7 +260,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         child: ProfilePosts3(),
                       ),
                       Expanded(
-                        child: ProfilePosts3(),
+                        child: ProfilePosts4(),
                       ),
                     ],
                   ),

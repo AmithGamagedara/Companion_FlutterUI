@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import '../widgets/search_widget.dart';
 import 'notification.dart';
-import '../../models/user.dart';
-import '../../routes/routes.dart';
-import '../widgets/navigation_widget.dart';
+// import 'notification.dart';
+
 
 class MessagePage extends StatefulWidget {
   @override
@@ -19,7 +19,6 @@ class _MessagePageState extends State<MessagePage> {
           children: [
             _top(),
             _body(),
-            _bottom(),
           ],
         ),
       ),
@@ -38,7 +37,7 @@ class _MessagePageState extends State<MessagePage> {
               Text(
                 'COMPANION',
                 style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 22.5,
                     fontFamily: 'Raleway',
                     fontWeight: FontWeight.bold,
                     color: Colors.white),
@@ -51,8 +50,9 @@ class _MessagePageState extends State<MessagePage> {
                   );
                 },
                 child: Icon(
-                  Icons.notifications,
+                  Icons.notifications_none_outlined,
                   color: Colors.white,
+
                 ),
               ),
             ],
@@ -83,7 +83,8 @@ class _MessagePageState extends State<MessagePage> {
     );
   }
 
-  //--message list--
+
+  //--chat list--
   Widget _body() {
     return Expanded(
       child: Container(
@@ -98,23 +99,9 @@ class _MessagePageState extends State<MessagePage> {
           padding: EdgeInsets.only(top: 30),
           physics: BouncingScrollPhysics(),
           children: [
-            TextField(
-              style: TextStyle(
-                fontSize: 20,
-              ),
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.white12,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(50.0),
-                ),
-                hintText: "Search",
-                suffixIcon: Icon(Icons.search),
-                suffixIconColor: Color.fromRGBO(87, 100, 241, 1.0),
-              ),
-            ),
+            const SearchWidget(),
             SizedBox(
-              height: 20,
+              height: 10,
             ),
             Text("Messages",
                 style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
@@ -122,53 +109,19 @@ class _MessagePageState extends State<MessagePage> {
               height: 10,
             ),
             _itemChats(
-              avatar: 'assets/images/49.jpg',
-              name: 'Maxwell',
+              avatar: 'assets/images/50.jpg',
+              name: 'Ashan',
               chat:
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+              'The event will be happening on 19th of june are you able to participate in the event .',
               time: '08.10',
             ),
             _itemChats(
-              avatar: 'assets/images/14.jpg',
-              name: 'Julia',
-              chat: 'bla bla bla',
+              avatar: 'assets/images/51.jpg',
+              name: 'Asadi',
+              chat: 'bro are you free tomorrow',
               time: '03.19',
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _bottom() {
-    return Expanded(
-      child: Scaffold(
-        bottomNavigationBar: MyCurvedNavigationBar(
-          onTabSelected: (index) {
-            updatePageIndex(index);
-
-            switch (index) {
-              case 0:
-              // Navigate to the home page
-                Navigator.pushNamed(context, Routes.home);
-                break;
-              case 1:
-              // Navigate to the explore page
-                Navigator.pushNamed(context, Routes.explore);
-                break;
-              case 2:
-                Navigator.pushNamed(context, Routes.add);
-                break;
-              case 3:
-              // Navigate to the messages page
-                Navigator.pushNamed(context, Routes.chat);
-                break;
-              case 4:
-              // Navigate to the profile page
-                Navigator.pushNamed(context, Routes.profile);
-                break;
-            }
-          },
         ),
       ),
     );
@@ -234,9 +187,6 @@ class _MessagePageState extends State<MessagePage> {
   }
 }
 
-void updatePageIndex(int index) {
-}
-
 class ChatPage extends StatefulWidget {
   @override
   _ChatPageState createState() => _ChatPageState();
@@ -264,6 +214,7 @@ class _ChatPageState extends State<ChatPage> {
         ),
       ),
     );
+
   }
 
   _topChat() {
@@ -283,9 +234,9 @@ class _ChatPageState extends State<ChatPage> {
                 ),
               ),
               Text(
-                'Maxwell',
+                'Ashan',
                 style: TextStyle(
-                    fontSize: 28,
+                    fontSize: 21,
                     fontWeight: FontWeight.bold,
                     fontFamily: "Raleway",
                     color: Colors.white),
@@ -295,7 +246,7 @@ class _ChatPageState extends State<ChatPage> {
           Row(
             children: [
               Container(
-                padding: EdgeInsets.all(12),
+                padding: EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: Colors.black12,
@@ -316,7 +267,7 @@ class _ChatPageState extends State<ChatPage> {
   Widget _bodyChat() {
     return Expanded(
       child: Container(
-        padding: EdgeInsets.only(left: 25, right: 25, top: 25),
+        padding: EdgeInsets.only(left: 25, right: 25, top: 15),
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.only(
@@ -327,22 +278,22 @@ class _ChatPageState extends State<ChatPage> {
           physics: BouncingScrollPhysics(),
           children: [
             _itemChat(
-              avatar: 'assets/images/49.jpg',
+              avatar: 'assets/images/50.jpg',
               chat: 1,
               message:
-                  'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
-              time: '18.00',
+              'The event will be happening on 19th of june are you able to participate in the event .',
+              time: '18.10',
             ),
             _itemChat(
               chat: 0,
-              message: 'Okey 🐣',
-              time: '18.00',
+              message: 'why not 🐣',
+              time: '18.12',
             ),
             _itemChat(
-              avatar: 'assets/images/14.jpg',
+              avatar: 'assets/images/50.jpg',
               chat: 1,
-              message: 'bla bla bla, 😀',
-              time: '18.00',
+              message: 'be on time 😀',
+              time: '18.20',
             ),
           ],
         ),
@@ -355,18 +306,18 @@ class _ChatPageState extends State<ChatPage> {
   _itemChat({int? chat, String? avatar, message, time}) {
     return Row(
       mainAxisAlignment:
-          chat == 0 ? MainAxisAlignment.end : MainAxisAlignment.start,
+      chat == 0 ? MainAxisAlignment.end : MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         avatar != null
             ? Avatar(
-                image: avatar,
-                size: 50,
-              )
+          image: avatar,
+          size: 50,
+        )
             : Text(
-                '$time',
-                style: TextStyle(color: Colors.grey.shade400),
-              ),
+          '$time',
+          style: TextStyle(color: Colors.grey.shade400),
+        ),
         Flexible(
           child: Container(
             margin: EdgeInsets.only(left: 10, right: 10, top: 20),
@@ -377,24 +328,24 @@ class _ChatPageState extends State<ChatPage> {
                   : Colors.indigo.shade50,
               borderRadius: chat == 0
                   ? BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
-                    )
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+                bottomLeft: Radius.circular(30),
+              )
                   : BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30),
-                      bottomRight: Radius.circular(30),
-                    ),
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+                bottomRight: Radius.circular(30),
+              ),
             ),
             child: Text('$message'),
           ),
         ),
         chat == 1
             ? Text(
-                '$time',
-                style: TextStyle(color: Colors.grey.shade400),
-              )
+          '$time',
+          style: TextStyle(color: Colors.grey.shade400),
+        )
             : SizedBox(),
       ],
     );

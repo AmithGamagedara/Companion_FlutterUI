@@ -25,7 +25,7 @@ class ProfilePosts extends StatelessWidget {
                 color: const Color.fromARGB(255, 221, 218, 218),
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
-                  image: NetworkImage('https://picsum.photos/800/400'),
+                  image: NetworkImage('https://insidearabia.com/wp-content/uploads/2020/05/IMG_2393.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
