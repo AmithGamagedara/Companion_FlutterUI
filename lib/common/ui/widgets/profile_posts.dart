@@ -43,9 +43,9 @@ class ProfilePosts extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            // "Liked by Huge and 200 others" Text
+            // "Liked by Hasini and 45 others" Text
             const Text(
-              'Liked by Huge and 200 others',
+              'Liked by Hasini and 200 others',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 10,
@@ -93,7 +93,7 @@ class ProfilePosts extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: const Text(
-                    '150 contributors',
+                    '20 contributors',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 12,
