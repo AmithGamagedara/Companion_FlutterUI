@@ -25,7 +25,7 @@ class ProfilePosts2 extends StatelessWidget {
                 color: const Color.fromARGB(255, 221, 218, 218),
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
-                  image: NetworkImage('https://picsum.photos/800/400'),
+                  image: NetworkImage('https://www.walterlilly.co.uk/wp-content/uploads/2022/09/GiveHands-iStock-Blog-1280x620-1280x620-1.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),

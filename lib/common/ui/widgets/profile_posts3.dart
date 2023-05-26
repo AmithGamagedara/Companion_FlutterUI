@@ -25,7 +25,7 @@ class ProfilePosts3 extends StatelessWidget {
                 color: const Color.fromARGB(255, 221, 218, 218),
                 borderRadius: BorderRadius.circular(10),
                 image: const DecorationImage(
-                  image: NetworkImage('https://picsum.photos/800/400'),
+                  image: NetworkImage('https://secondwindmovement.com/wp-content/uploads/2021/12/doing-charity-work-featured-images.png'),
                   fit: BoxFit.cover,
                 ),
               ),

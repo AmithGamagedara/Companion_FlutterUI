@@ -99,6 +99,9 @@ flutter:
     - assets/images/Swipe_01.png
     - assets/images/Swipe_02.png
     - assets/images/Swipe_03.png
+    - assets/images/50.jpg
+    - assets/images/51.jpg
+    - assets/images/15.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

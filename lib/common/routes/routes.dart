@@ -3,8 +3,7 @@ import 'package:companion_app/common/ui/pages/auth/login.dart';
 import '../ui/forms/donation.dart';
 import '../ui/pages/home.dart';
 import '../ui/pages/profile.dart';
-import '../ui/pages/explore.dart';
-import '../ui/pages/chat.dart';
+import '../ui/pages/explore.dart';import '../ui/pages/chat.dart';
 import 'package:companion_app/common/splash_screens/Splash.dart';
 import 'package:flutter/material.dart';
 
