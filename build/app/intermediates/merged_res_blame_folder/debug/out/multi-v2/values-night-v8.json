@@ -4,7 +4,7 @@
             "outputFile": "com.example.companion_app-mergeDebugResources-21:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\amith\\Desktop\\Companion-Mobile-App\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\ashan\\AndroidStudioProjects\\Companion_FlutterUI\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
