@@ -142,12 +142,13 @@ class _UploadFilePageState extends State<UploadFilePage> {
             const SizedBox(height: 16),
             const PointedTextList(
               items: [
-                'Laboris voluptate ipsum culpa et veniam nulla fugiat ex Lorem.',
-                'Dolor voluptate magna ea laboris dolor adipisicing et.',
-                'Ut laborum eiusmod in ullamco sint voluptate anim exercitation deserunt.',
-                'Consequat in ad consectetur ad fugiat quis.',
+                'the fundraiser must upload a letter from local area government officer.',
+                'upload recipients approval letter.',
+                'upload approval from ministry and approval from social service center.',
+                'approvel letter from banks about the account detail verification',
               ],
             ),
+            SizedBox(height: 25,),
             SizedBox(width: 250, child: Builder(
               builder: (context) => ElevatedButton(
                 onPressed: () {

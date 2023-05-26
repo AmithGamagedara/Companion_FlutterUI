@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../Payment/payment.dart';
 import '../../models/posts.dart';
 import '../../routes/routes.dart';
 import '../widgets/navigation_widget.dart';
@@ -132,27 +133,42 @@ class _FullPostState extends State<FullPost> {
                 children: [
                   Expanded(
                     flex: 7,
-                    child: Container(
-                      height: 40,
-                      decoration: BoxDecoration(
-                        color: const Color.fromRGBO(88, 101, 242, 1.0),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor:
-                              const Color.fromRGBO(88, 101, 242, 1.0),
+                    child: InkWell(
+                      child: Container(
+                        height: 40,
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(88, 101, 242, 1.0),
+                          borderRadius: BorderRadius.circular(8),
                         ),
-                        child: Text(
-                          'Donate',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600,
-                            fontFamily: GoogleFonts.raleway().fontFamily,
-                            fontSize: 14,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color.fromRGBO(88, 101, 242, 1.0),
                           ),
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => const myPayment(title: 'COMPANION')),
+                              );
+                            },
+                            child: Text(
+                              'Donate',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                fontFamily: GoogleFonts.raleway().fontFamily,
+                                fontSize: 14,
+                              ),
+                            ),
+                          ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => const myPayment(title: 'COMPANION')),
+                            );
+                          },
                         ),
-                        onPressed: () {},
                       ),
                     ),
                   ),
