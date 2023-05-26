@@ -5,17 +5,16 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'AfteruploadFile.dart';
 import 'uploadpopuppage.dart';
 
-class UploadFilePage extends StatefulWidget {
-  const UploadFilePage({Key? key}) : super(key: key);
+class AfterUploadFilePage extends StatefulWidget {
+  const AfterUploadFilePage({Key? key}) : super(key: key);
 
   @override
-  _UploadFilePageState createState() => _UploadFilePageState();
+  _AfterUploadFilePageState createState() => _AfterUploadFilePageState();
 }
 
-class _UploadFilePageState extends State<UploadFilePage> {
+class _AfterUploadFilePageState extends State<AfterUploadFilePage> {
   final List<String> _files = [];
 
   void _selectFiles() async {
@@ -24,14 +23,6 @@ class _UploadFilePageState extends State<UploadFilePage> {
       setState(() {
         _files.add(result.files.single.path!);
       });
-      // Within the `FirstRoute` widget
-       {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => const AfterUploadFilePage()),
-        );
-      }
-
     }
   }
 
@@ -120,7 +111,7 @@ class _UploadFilePageState extends State<UploadFilePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: const [
                             Text(
-                              'Upload your legal ',
+                              'Legal Document',
                               style: TextStyle(
                                 color: Colors.blueGrey,
                                 fontSize: 24,
@@ -128,11 +119,11 @@ class _UploadFilePageState extends State<UploadFilePage> {
                               ),
                             ),
                             Text(
-                              'document here',
+                              'Uploaded',
                               style: TextStyle(
-                                color: Colors.blueGrey,
+                                color: Colors.green,
                                 fontSize: 24,
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w900,
                               ),
                             ),
                             SizedBox(height: 16),

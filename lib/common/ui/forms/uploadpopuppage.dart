@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
 
+import '../pages/home2.dart';
+
 class UploadPopupPage extends StatefulWidget {
   const UploadPopupPage({super.key});
 
@@ -81,14 +83,20 @@ class _UploadPopupPageState extends State<UploadPopupPage> {
                             fontFamily: 'Raleway',
                             fontWeight: FontWeight.w900)),
                     const SizedBox(height: 40.0),
-                    InkWell(
-                      onTap: () {},
+                    ElevatedButton(
+                      // Within the `FirstRoute` widget
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const NewHomePage()),
+                          );
+                        },
                       child: SizedBox(
                           height: 50,
                           width: 300,
                           child: Material(
                             borderRadius: BorderRadius.circular(11),
-                            color: const Color.fromRGBO(87, 100, 241, 1.0),
+                            color: Colors.blue,
                             elevation: 5.0,
                             child: const Center(
                               child: Text(
