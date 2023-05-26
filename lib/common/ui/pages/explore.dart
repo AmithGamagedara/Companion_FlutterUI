@@ -103,31 +103,21 @@ class _ExplorePageState extends State<ExplorePage> {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  "assets/images/map_01.jpeg",
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  height: 200,
+                ),
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12),
                 child: Divider(),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: CachedNetworkImage(
-                  imageUrl:
-                      'https://hipmaps.com/wp-content/uploads/2022/08/Google_Austin_Slider_MapV2.png',
-                  height: MediaQuery.of(context).size.width / 2,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                  imageBuilder: (context, imageProvider) => ClipRRect(
-                    borderRadius: BorderRadius.circular(10),
-                    child: Image(
-                      image: imageProvider,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  placeholder: (context, url) =>
-                      const CircularProgressIndicator(),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
-                ),
-              ),
-              const SizedBox(height: 16),
+
+              const SizedBox(height: 5),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -142,7 +132,96 @@ class _ExplorePageState extends State<ExplorePage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: Image.network(
+                        'https://victoria.mediaplanet.com/app/uploads/sites/103/2019/11/mainimage-170-576x486.jpg',
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 10,),
+                          Text(
+                            'Apeksha Hospital',
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'Maharagama, Sri Lanka',
+                            style: GoogleFonts.roboto(
+                              fontSize: 14,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'Sunt cupidatat nulla ex dolore anim deserunt esse eu Lorem ex aliqua.',
+                            style: GoogleFonts.roboto(
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      width: 100,
+                      height: 100,
+                      child: Image.network(
+                        'https://www.usmagazine.com/wp-content/uploads/sophie-the-brave-89a9f469-8722-4e23-ad1b-41a66d95b93a.jpg?w=700&quality=78&strip=all',
+                      ),
+                    ),
+                    const SizedBox(width: 16),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(height: 1,),
+                          Text(
+                            'Apeksha Hospital',
+                            style: GoogleFonts.roboto(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            'Maharagama, Sri Lanka',
+                            style: GoogleFonts.roboto(
+                              fontSize: 14,
+                            ),
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            'The National Cancer Institute (NCI) is the leading hospital under the Ministry of Health dedicated...',
+                            style: GoogleFonts.roboto(
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               const EventsCard(),
             ],
           ),
@@ -154,22 +233,22 @@ class _ExplorePageState extends State<ExplorePage> {
 
           switch (index) {
             case 0:
-              // Navigate to the home page
+            // Navigate to the home page
               Navigator.pushNamed(context, Routes.home);
               break;
             case 1:
-              // Navigate to the explore page
+            // Navigate to the explore page
               Navigator.pushNamed(context, Routes.explore);
               break;
             case 2:
               Navigator.pushNamed(context, Routes.add);
               break;
             case 3:
-              // Navigate to the messages page
+            // Navigate to the messages page
               Navigator.pushNamed(context, Routes.chat);
               break;
             case 4:
-              // Navigate to the profile page
+            // Navigate to the profile page
               Navigator.pushNamed(context, Routes.profile);
               break;
           }

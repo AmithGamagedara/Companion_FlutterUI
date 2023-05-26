@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quickalert/quickalert.dart';
 
+import '../pages/home2.dart';
+
 class UploadPopupPage extends StatefulWidget {
   const UploadPopupPage({super.key});
 
@@ -61,11 +63,13 @@ class _UploadPopupPageState extends State<UploadPopupPage> {
                     ),
                     const SizedBox(height: 30.0),
                     const Center(
-                      child: Text(
-                          "Lorem ipsum dolor sit amet, consectetur, adipiscing elit, sed do eiusmod",
-                          style: TextStyle(
-                              color: Color.fromRGBO(87, 100, 241, 1.0),
-                              fontSize: 14.0)),
+                      child: Center(
+                        child: Text(
+                            "Administration will go through the legal documents and acknowledge about the process.",
+                            style: TextStyle(
+                                color: Color.fromRGBO(87, 100, 241, 1.0),
+                                fontSize: 14.0)),
+                      ),
                     ),
                     const SizedBox(height: 60.0),
                     const Text("Donation Legal",
@@ -81,15 +85,21 @@ class _UploadPopupPageState extends State<UploadPopupPage> {
                             fontFamily: 'Raleway',
                             fontWeight: FontWeight.w900)),
                     const SizedBox(height: 40.0),
-                    InkWell(
-                      onTap: () {},
+                    ElevatedButton(
+                      // Within the `FirstRoute` widget
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const NewHomePage()),
+                          );
+                        },
                       child: SizedBox(
                           height: 50,
                           width: 300,
                           child: Material(
                             borderRadius: BorderRadius.circular(11),
-                            color: const Color.fromRGBO(87, 100, 241, 1.0),
-                            elevation: 5.0,
+                            color: Colors.blue,
+                            //elevation: 5.0,
                             child: const Center(
                               child: Text(
                                 "Back To Home",

@@ -18,7 +18,7 @@ class EventsCard extends StatelessWidget {
             width: 100,
             height: 100,
             child: Image.network(
-              'https://placehold.co/100x100.png',
+              'https://png.pngtree.com/element_our/png/20181114/charity-flat-icon-png_238382.jpg',
             ),
           ),
           const SizedBox(width: 16),
@@ -26,8 +26,9 @@ class EventsCard extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(height: 10,),
                 Text(
-                  'Apeksha Hospital',
+                  'Donate Blood',
                   style: GoogleFonts.roboto(
                     fontWeight: FontWeight.bold,
                     fontSize: 16,
@@ -35,14 +36,14 @@ class EventsCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  'Kohuwala, Sri Lanka',
+                  'Colombo, Sri Lanka',
                   style: GoogleFonts.roboto(
                     fontSize: 14,
                   ),
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  'Sunt cupidatat nulla ex dolore anim deserunt esse eu Lorem ex aliqua.',
+                  'Blood is the most precious gift that anyone can give to another person – the gift of life. A decision....',
                   style: GoogleFonts.roboto(
                     fontSize: 14,
                   ),
@@ -50,8 +51,12 @@ class EventsCard extends StatelessWidget {
               ],
             ),
           ),
+
+          SizedBox(height: 500,),
+
         ],
       ),
     );
   }
+
 }
